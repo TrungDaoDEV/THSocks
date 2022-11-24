@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { LogBox } from 'react-native';
+import StackMain from './src/navigation/StackMain';
+
+LogBox.ignoreLogs(['Sending', 'Non-serializable']);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      <StackMain />
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 
