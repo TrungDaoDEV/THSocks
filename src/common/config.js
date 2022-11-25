@@ -7,10 +7,10 @@ export const urlAPI = 'https://node-js-demo-trung.herokuapp.com/';
 //Home.js
 export const LOAD_MAYCHAY = 'loadmaychay';
 //SanLuong.js
-// export const LOAD_IN = 'data';
 export const LOAD_SANLUONG = 'loadsanluong';
 //DonHang.js
 export const LOAD_DONHANG = 'loaddonhang';
+export const UPDATE_MAYDET = 'updatemaydet'; //touchable Đổi mẫu-SanLuong.js
 //SelectKH.js
 export const GET_KHACHHANG = 'khachhang';
 export const INSERT_KHACHHANG = 'insertkh';
@@ -35,8 +35,7 @@ export const DELETE_CTDH = 'deletectdh';
 export const LOAD_CHITIETDET = 'loadchitietdet';
 export const INSERT_CHITIETDET = 'insertChiTietDet';
 export const UPDATE_CHITIETDET = 'updateChiTietDet';
-//DonHang.js
-export const UPDATE_MAYDET = 'updatemaydet';
+export const DELETE_CHITIETDET = 'deletectd';
 //MayDet.js
 export const LOAD_MD = 'load_md';
 export const INSERT_MD = 'insert_md';

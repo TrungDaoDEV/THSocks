@@ -2,7 +2,7 @@ import { Dimensions, FlatList, SafeAreaView, StyleSheet, Text, TouchableOpacity,
 import { useEffect, useState } from 'react';
 import { TextInput } from 'react-native-paper';
 import axios from 'axios';
-import { urlAPI, UPDATE_CHITIETDET, INSERT_CHITIETDET, LOAD_CHITIETDET } from '../../common/config'
+import { urlAPI, DELETE_CHITIETDET, LOAD_CHITIETDET } from '../../common/config'
 import styleCommon from '../../theme/styleCommon'
 
 const windowWidth = Dimensions.get('window').width;
@@ -67,7 +67,7 @@ export default function NhapSanLuong(props) {
         })
     }
     const deleteCTD = () => {
-        var url = urlAPI + 'deletectd';
+        var url = urlAPI + DELETE_CHITIETDET;
         axios.post(url, {
             idMD: idMD,
             idCTDH: idCTDH,
