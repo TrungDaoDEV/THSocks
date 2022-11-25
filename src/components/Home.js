@@ -17,6 +17,9 @@ export default function Home({ navigation }) {
         + items.SL + " chay: " + items.TT);
       getDataIn(LOAD_TTMAY, setDataMaydet);
     });
+    const unsubscribe = navigation.addListener('focus', () => {
+      getDataIn(LOAD_TTMAY, setDataMaydet);
+    });
     return () => {
       socket.close();
     }

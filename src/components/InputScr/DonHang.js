@@ -18,7 +18,7 @@ export default function DonHang(props) {
   const [sl_Det, setSL_Det] = useState(0);
   //xuất ra màn hình 
   const [dataDonHang, setDataDonHang] = useState([]);
-  const { button1, text } = styleCommon;
+  const { button1, text, txt } = styleCommon;
 
   console.log("first " + InputSL + "  idMD : " + idMD + " Ngày: " + Ngay);
 
@@ -79,7 +79,7 @@ export default function DonHang(props) {
         <View style={{ borderBottomWidth: 1, marginVertical: 5 }} />
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{TenKH}</Text>
-          <Text>{NgayDat}</Text>
+          <Text style={{ fontSize: 18, marginRight: 100 }}>{NgayDat}</Text>
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
           <Text style={{ fontSize: 18 }}>{TenHH}</Text>
@@ -136,7 +136,7 @@ export default function DonHang(props) {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }} >
             <Text style={text}>Ngày đặt:</Text>
-            <Text>{idDH === '' ? null : ngayDat}</Text>
+            <Text style={txt}>{idDH === '' ? null : ngayDat}</Text>
           </View>
           <TouchableOpacity
             onPress={() => {
