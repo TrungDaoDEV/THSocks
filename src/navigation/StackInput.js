@@ -29,11 +29,11 @@ export default function StackInput() {
                 component={SanLuong}
                 options={{ tabBarLabel: 'Sản Lượng' }}
             />
-            <Tab.Screen
+            {/* <Tab.Screen
                 name="MayDet"
                 component={MayDet}
                 options={{ tabBarLabel: 'Máy Dệt' }}
-            />
+            /> */}
         </Tab.Navigator>
     )
 }

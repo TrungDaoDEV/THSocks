@@ -17,9 +17,9 @@ export default function Home({ navigation }) {
         + items.SL + " chay: " + items.TT);
       getDataIn(LOAD_TTMAY, setDataMaydet);
     });
-    const unsubscribe = navigation.addListener('focus', () => {
+    // const unsubscribe = navigation.addListener('focus', () => {
       getDataIn(LOAD_TTMAY, setDataMaydet);
-    });
+    // });
     return () => {
       socket.close();
     }
@@ -29,10 +29,10 @@ export default function Home({ navigation }) {
     return dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();//format: d-m-y;
   }
   const renderItem = ({ item, index }) => {
-    const { May, time_off, run, stop, Trangthai } = item;
+    const { May, SL, time_off, run, stop, Trangthai } = item;
     return (
       <TouchableOpacity
-        onPress={() => { alert("Máy:" + May + " Giờ đứng: " + time_off + " Stop:" + stop + " Run:" + run); }}
+        onPress={() => { alert("Máy:" + May + " Giờ đứng: " + time_off + " Stop:" + stop + " Run:" + run + " SL:" + SL); }}
         style={[bao, item.Trangthai ? active : inactive, { flex: 1 / 3 }]}>
         <Text style={text}>{item.May}</Text>
       </TouchableOpacity>

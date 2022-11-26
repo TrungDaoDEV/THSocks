@@ -76,34 +76,43 @@ export default function DonHang(props) {
       <TouchableOpacity
         onPress={() => { handleSelectDonHang(item) }}
       >
-        <View style={{ borderBottomWidth: 1, marginVertical: 5 }} />
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{TenKH}</Text>
-          <Text style={{ fontSize: 18, marginRight: 100 }}>{NgayDat}</Text>
+        <View style={{ borderBottomWidth: 1, marginVertical: 6 }} />
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 3 }}>
+          <View style={{ flex: 1, alignItems: 'flex-start', marginLeft: 3 }}>
+            <Text style={{ fontSize: 18, fontWeight: 'bold' }}>{TenKH}</Text>
+          </View>
+          <View style={{ flex: 0.7 }}>
+            <Text style={{ fontSize: 18 }}>{NgayDat}</Text>
+          </View>
         </View>
         <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-          <Text style={{ fontSize: 18 }}>{TenHH}</Text>
-          <Text style={{ fontSize: 18 }}>{Mau}</Text>
+          <View style={{ flex: 1.3, alignItems: 'center' }}>
+            <Text style={{ fontSize: 18 }}>{TenHH}</Text>
+          </View>
+          <View style={{ flex: 0.6, alignItems: 'flex-start' }}>
+            <Text style={{ fontSize: 18 }}>{Mau}</Text>
+          </View>
           {
             item.SL_Det ?
               (
                 item.SL_Det > item.SL_Dat ?
                   (
-                    <View>
+                    <View style={{ flex: 1, alignItems: 'flex-end', marginRight: 3 }}>
                       <Text style={{ fontSize: 18, color: 'red' }}>Dệt {SL_Det}/{SL_Dat} Đặt</Text>
                     </View>
                   )
                   :
                   (
-                    <View>
+                    <View style={{ flex: 1, alignItems: 'flex-end', marginRight: 3 }}>
                       <Text style={{ fontSize: 18, color: 'green' }}>Dệt {SL_Det}/{SL_Dat} Đặt</Text>
                     </View>
                   )
               )
               :
-              (<View>
-                <Text style={{ fontSize: 18, color: 'black' }}>Đặt: {SL_Dat}</Text>
-              </View>
+              (
+                <View style={{ flex: 1, alignItems: 'flex-end', marginRight: 3 }}>
+                  <Text style={{ fontSize: 18, color: 'black' }}>Đặt: {SL_Dat}</Text>
+                </View>
               )
           }
         </View>

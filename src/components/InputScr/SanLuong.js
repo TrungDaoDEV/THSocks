@@ -64,16 +64,24 @@ export default function SanLuong(props) {
               <Text style={h2}>{item.May}</Text>
             </View>
             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-              <Text style={txt}>{item.TenHH}</Text>
-              <Text style={txt}>{item.Mau}</Text>
+              <View style={{ flex: 2, alignItems: 'center' }}>
+                <Text style={txt}>{item.TenHH}</Text>
+              </View>
+              <View style={{ flex: 1, alignItems: 'flex-start' }}>
+                <Text style={txt}>{item.Mau}</Text>
+              </View>
               {
                 item.TongDet > item.SL_Dat ?
                   (
-                    <Text style={[txt, { fontWeight: 'bold', color: 'red' }]}>{item.TongDet}/{item.SL_Dat}</Text>
+                    <View style={{ flex: 1, alignItems: 'center' }}>
+                      <Text style={[txt, { fontWeight: 'bold', color: 'red' }]}>{item.TongDet}/{item.SL_Dat}</Text>
+                    </View>
                   )
                   :
                   (
-                    <Text style={[txt, { color: 'green' }]}>{item.TongDet}/{item.SL_Dat}</Text>
+                    <View style={{ flex: 1, alignItems: 'center' }}>
+                      <Text style={[txt, { color: 'green' }]}>{item.TongDet}/{item.SL_Dat}</Text>
+                    </View>
                   )
               }
             </View>
@@ -89,7 +97,7 @@ export default function SanLuong(props) {
       <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', margin: 10 }}>
         <Text style={txt}>Ngày Nhập: {date.toLocaleDateString()}</Text>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Text  style={txt}>Chọn Ngày:</Text>
+          <Text style={txt}>Chọn Ngày:</Text>
           <DateTimePicker
             testID="dateTimePicker"
             value={date}
